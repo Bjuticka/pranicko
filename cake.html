@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hodně štěstí k dnešnímu svátku, Kostičko! 💖</title>
+  <style>
+    body {
+      background: #89F336;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .cake-container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .piece {
+      opacity: 0;
+      transform: translateY(100px);
+      animation: appear 0.6s forwards;
+    }
+
+    .cake-layer {
+        width: 200px;
+        height: 40px;
+        background: #d18669;
+        border-radius: 5px;
+        margin-top: 5px; /* only top spacing */
+    }
+
+    .icing {
+        width: 200px;
+        height: 30px;
+        background: #fff;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        position: relative;
+    }
+
+    .candle {
+        width: 8px;
+        height: 35px;
+        background: #fff;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+
+    .flame {
+      width: 10px;
+      height: 10px;
+      background: orange;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.5s infinite alternate;
+    }
+
+    .plate {
+        width: 300px;
+        height: 20px;
+        background: #fff;
+        border-radius: 10px;
+        margin-top: 5px; /* same spacing as cake layers */
+    }
+
+    .message {
+      font-size: 24px;
+      color: #7a3e4f;
+      margin-top: 30px;
+      opacity: 0;
+      animation: appear 1s forwards;
+      animation-delay: 3.5s;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cake-container">
+    <div class="plate piece" style="animation-delay: 0s;"></div>
+    <div class="cake-layer piece" style="animation-delay: 0.5s;"></div>
+    <div class="cake-layer piece" style="animation-delay: 1s;"></div>
+    <div class="cake-layer piece" style="animation-delay: 1.5s;"></div>
+    <div class="icing piece" style="animation-delay: 2s;">
+      <div class="candle piece" style="animation-delay: 2.5s;">
+        <div class="flame"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message">Hodně štěstí k dnešnímu svátku, Kostičko! 💖</div>
+</body>
+</html>
